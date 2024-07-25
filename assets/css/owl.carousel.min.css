@@ -1,5 +1,5 @@
 /**
- * Owl Carousel v2.3.3
+ * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
  * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
@@ -55,6 +55,7 @@
 .owl-carousel .owl-item img {
     display: block;
     width: 100%;
+    height: 100%;
 }
 
 .owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled {
@@ -79,7 +80,7 @@
     color: inherit;
     border: none;
     padding: 0!important;
-    font: inherit
+    font: inherit;
 }
 
 .owl-carousel.owl-loading {
@@ -96,8 +97,8 @@
 }
 
 .owl-carousel.owl-drag .owl-item {
-    -ms-touch-action: none;
-    touch-action: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -153,6 +154,10 @@
     transition: opacity .4s ease
 }
 
+.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""] {
+    max-height: 0
+}
+
 .owl-carousel .owl-item img.owl-lazy {
     transform-style: preserve-3d
 }
@@ -202,3 +207,75 @@
     height: 100%;
     width: 100%
 }
+/* ===================================
+owl carasoul of the defac list 
+====================================== */
+.owl-carousel.owl-theme.defac-list-owl, .owl-carousel.owl-theme.project-box {
+    position: relative;
+}
+.owl-carousel.defac-list-owl .owl-nav button span {
+    border: 1px solid;
+    font-size: 28px;
+    padding: 5px 20px;
+    /* border-radius: 100%; */
+    /* background: rgba(0, 0, 0, 0.2); */
+    padding-bottom: 7px;
+    /* color: #086eb4; */
+    color: #fff;
+  }
+  .owl-theme .owl-nav [class*="owl-"] span:hover {
+    background: #086eb473;
+    color: #fff;
+    text-decoration: none;
+    /* padding: 5px 0px !important; */
+    /* padding-bottom: 7px; */
+  }
+
+  .owl-carousel.owl-theme.defac-list-owl button.owl-prev {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+}
+
+.owl-carousel.owl-theme.defac-list-owl button.owl-next {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+}
+
+.owl-carousel.testimonial-owl .owl-nav button span {
+    padding: 6px 16px;
+    border: 1px solid;
+    font-size: 20px;
+    color: #086eb4;
+    font-weight: 700;
+}
+
+.owl-carousel.testimonial-owl .owl-nav {
+    display: flex;
+    gap: 10px;
+}
+/* =========.owl-carousel.project-box================== */
+
+.owl-carousel.project-box .owl-nav button  span {
+    padding: 6px 16px;
+    border: 1px solid;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    background: #086eb4;
+}
+
+
+.owl-carousel.project-box button.owl-prev {
+    position: absolute;
+    top: 40%;
+    left: -15px;
+}
+
+.owl-carousel.project-box button.owl-next {
+    position: absolute;
+    top: 40%;
+    right: -15px;
+}
+
